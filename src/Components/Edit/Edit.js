@@ -1,7 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Edit() {
-  return <p>Edit</p>
+  return (
+  <div>
+    <p>Edit</p>
+    <Link to="/">
+      <button>
+        Guardar
+      </button>
+    </Link>
+    <Link to="/">
+      <button>
+        Cancelar
+      </button>
+    </Link>
+   </div>
+  );
 }
 
 export default Edit;
