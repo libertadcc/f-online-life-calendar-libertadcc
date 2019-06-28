@@ -4,9 +4,20 @@ import { Switch, Route } from 'react-router-dom';
 import Home from '../Home/Home.js';
 import Edit from '../Edit/Edit.js';
 
-function App() {
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state({
+      mood: [ 
+        'happy', 
+        'sad',
+        'sad'
+      ]
+    })
+  }
+  render(){
   return (
-    <div className="App">
+    <div className="principal__page">
       <Switch>
         <Route exact path="/" render={() => 
           <Home /> }/>
@@ -15,6 +26,7 @@ function App() {
       </Switch>
     </div>
   );
+  }
 }
 
 export default App;

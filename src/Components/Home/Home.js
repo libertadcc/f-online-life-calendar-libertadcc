@@ -1,15 +1,18 @@
 import React from 'react';
+import './Home.scss'
 import { Link } from 'react-router-dom';
 
 function Home() {
   return (
-    <div>
+    <div className="home__page">
       <Link to="/edit">
-        <button>
+        <button className="home__plus">
           +
         </button>
       </Link>
-      <p>Home</p>
+      <div className="home__results">
+      holas holas
+      </div>
     </div>
   );
 }

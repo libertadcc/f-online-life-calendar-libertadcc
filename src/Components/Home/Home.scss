@@ -1,0 +1,21 @@
+
+.home__plus {
+  width: 100%;
+  height: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  background: #7a8cef;
+  position: fixed;
+  top: 0;
+  color: white;
+  border:none;
+}
+
+.home__results {
+  position: relative;
+  top: 50px;
+  padding: 20px;
+  @media all and (min-width: 768px){
+    padding: 40px;
+  }
+}
