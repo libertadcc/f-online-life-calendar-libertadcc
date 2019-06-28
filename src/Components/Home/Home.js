@@ -2,7 +2,7 @@ import React from 'react';
 import './Home.scss'
 import { Link } from 'react-router-dom';
 
-function Home({data}) {
+function Home({item}) {
   return (
     <div className="home__page">
       <Link to="/edit">
@@ -11,20 +11,13 @@ function Home({data}) {
         </button>
       </Link>
       <div className="home__results">
-        {data.map(item => {
-          if(item.mood==='happy'){
-            return (
-              <span>
-                😄
-              </span>);
-          } else if(item.mood ==='sad'){
-            return(
-              <span>
-                😞
-              </span>
-            );
-          }
-        })}
+        {if (${item.mood} === 'happy')}
+        if(mood==='happy'){
+          <p>hola</p>
+        } else {
+          <p>mal</p>
+        }
+        
       </div>
     </div>
   );

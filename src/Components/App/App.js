@@ -36,11 +36,13 @@ class App extends React.Component {
   }
 
   render(){
+  const { data } = this.state;
   return (
     <div className="principal__page">
       <Switch>
         <Route exact path="/" render={() => 
-          <Home data={this.state.data}/> }/>
+          <Home 
+          item={data.map(item =>item)}/> }/>
         <Route path="/edit" render={() =>
           <Edit 
           updateMood={this.updateMood}
