@@ -42,6 +42,7 @@ class App extends React.Component {
       <Switch>
         <Route exact path="/" render={() => 
           <Home 
+          data={data}
           item={data.map(item =>item)}/> }/>
         <Route path="/edit" render={() =>
           <Edit 

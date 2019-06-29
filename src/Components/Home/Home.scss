@@ -19,3 +19,19 @@
     padding: 40px;
   }
 }
+
+.smiley__happy {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: yellow;
+  font-weight: bold;
+}
+
+.smiley__sad {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: blue;
+  font-weight: bold;
+}
