@@ -2,7 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Edit.scss';
 
-function Edit({updateMood, updateDate}) {
+class Edit extends React.Component {
+  constructor(props){
+    super(props);
+    this.state=({
+      mood: ''
+    })
+    this.handleChangeMood = this.handleChangeMood.bind(this);
+  }
+
+  handleChangeMood(event){
+    const currentMood = event.currentTarget.value;
+    this.setState({
+      mood: currentMood
+    })
+  }
+
+  render(){
+  const {updateDate, updateMood} = this.props;
   return (
   <div className="edit__page">
     <h1 className="edit__title">¿Cómo te ha ido el día?</h1>
@@ -31,7 +48,7 @@ function Edit({updateMood, updateDate}) {
               type="radio" 
               name="state" 
               defaultValue="happy" 
-              onClick={updateMood}/> 
+              onClick={this.handleChangeMood}/> 
               :)
             </label>
           </div>
@@ -44,7 +61,7 @@ function Edit({updateMood, updateDate}) {
               type="radio" 
               name="state" 
               defaultValue="sad" 
-              onClick={updateMood}/> 
+              onClick={this.handleChangeMood}/> 
               :( 
             </label>
           </div>
@@ -54,7 +71,8 @@ function Edit({updateMood, updateDate}) {
         <h2 className="form__message--title">Mensaje:</h2>
         <textarea className="form__message--content"
         name="message" 
-        placeholder="¿Por qué es un buen día?"/>
+        placeholder="¿Por qué es un buen día?"
+        disabled = {`${this.state.mood}` === 'happy' ? false : true} />
       </div>
       <div className="edit__buttons">
         <Link
@@ -74,6 +92,7 @@ function Edit({updateMood, updateDate}) {
     </form>
    </div>
   );
+  }
 }
 
 export default Edit;

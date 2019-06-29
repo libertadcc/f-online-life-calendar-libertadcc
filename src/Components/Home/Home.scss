@@ -28,7 +28,6 @@
 }
 
 .smiley  {
-
   justify-self: center;
   width: 60px;
   height: 60px;
@@ -41,20 +40,21 @@
 }
 
 .happy {
-  background: yellow;
+  background: rgb(255, 209, 0);
 }
 
 .sad {
-  background: blue;
+  background: rgb(255, 59, 0);
+  color: white;
 }
 
 .face {
-  font-size: 30px;
+  font-size: 40px;
   position: relative;
-  top: 10px;
-  left: 19px;
+  top: 3px;
+  left: 17px;
   @media all and (min-width: 768px){
-    top: 20px;
-  left: 30px;
+    top: 15px;
+    left: 25px;
   }
 }

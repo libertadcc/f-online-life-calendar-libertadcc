@@ -75,6 +75,14 @@
 .form__message--content {
   font-size: 15px;
   text-align: center;
+  &:disabled{
+    background: rgb(201, 194, 194);
+    opacity: 0.5;
+    &:-moz-placeholder{
+      color: black;
+    }
+    
+  }
 }
 
 .edit__buttons {
