@@ -2,7 +2,7 @@ import React from 'react';
 import './Home.scss'
 import { Link } from 'react-router-dom';
 
-function Home({data, item}) {
+function Home({item}) {
   return (
     <div className="home__page">
       <Link to="/edit">
@@ -11,21 +11,25 @@ function Home({data, item}) {
         </button>
       </Link>
       <ul className="home__results">
-      {data.map(item => {
+      { item.map((item, index) => {
         if ( `${item.mood}` === 'happy') {
           return (
-            <li className="smiley__happy">
-              :) 
+            <li key={index} className="smiley happy">
+              <span className="face">
+                :)
+              </span>
             </li>
           );
         } else {
           return (
-            <li className="smiley__sad">
-              :(
+            <li key={index} className="smiley sad">
+              <span className="face">
+                :(
+              </span>
             </li>
           );
-        }
-        })} 
+        }})} 
+      {/* ¿Cómo hacerlo pasando solo el mood? */}
       </ul>
     </div>
   );

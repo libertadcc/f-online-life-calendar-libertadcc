@@ -16,7 +16,9 @@ class App extends React.Component {
         {date: '2019-01-04',
         mood: 'happy'},
         {date: '2019-01-08',
-        mood: 'happy'}
+        mood: 'happy'},
+        {date: '2019-01-09',
+        mood: 'sad'},
       ]
     })
     this.updateMood = this.updateMood.bind(this);
@@ -42,7 +44,6 @@ class App extends React.Component {
       <Switch>
         <Route exact path="/" render={() => 
           <Home 
-          data={data}
           item={data.map(item =>item)}/> }/>
         <Route path="/edit" render={() =>
           <Edit 
