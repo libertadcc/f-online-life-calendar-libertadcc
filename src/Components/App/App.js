@@ -6,41 +6,46 @@ import Edit from '../Edit/Edit.js';
 
 class App extends React.Component {
   constructor(props){
-    const newData = { date: '', mood: '' };
+    
     super(props);
     this.state=({
       data: [ 
         {date: '2019-01-02',
         mood: 'happy'},
         {date: '2019-01-03',
-        mood: 'sad'},
-        {date: '2019-01-04',
-        mood: 'happy'},
-        {date: '2019-01-08',
-        mood: 'happy'},
-        {date: '2019-01-09',
-        mood: 'sad'},
-      ]
+        mood: 'sad'}
+      ],
+      newDate: '',
+      newMood: ''
     })
     this.updateMood = this.updateMood.bind(this);
+    this.updateDate = this.updateDate.bind(this);
+    this.updateApp = this.updateApp.bind(this);
   }
 
-
   updateMood(event){
+    const { newMood } = this.state;
     const actualMood = event.currentTarget.value;
-    return(
-      this.newData.mood: actualMood
-    );
+    this.setState({
+      newMood: actualMood
+    });
   }
 
   updateDate(event){
-    let dato;
+    const { newDate } = this.state;
     const actualDate = event.currentTarget.value;
-    return(
-      this.dato : actualDate
-    );
-    console.log('date', actualDate);
-    console.log('dato', dato);
+    this.setState({
+      newDate: actualDate
+    });
+  }
+
+
+  
+  updateApp(){
+    const actualData = {date: this.state.newDate, mood: this.state.newMood};
+    this.setState(prevState => ({
+      data: [...prevState.data, actualData]
+    }))
   }
 
   render(){
@@ -53,6 +58,8 @@ class App extends React.Component {
           item={data.map(item =>item)}/> }/>
         <Route path="/edit" render={() =>
           <Edit 
+          updateApp = {this.updateApp}
+          newMood = {this.state.newMood}
           updateMood={this.updateMood}
           updateDate={this.updateDate}/>} />
       </Switch>

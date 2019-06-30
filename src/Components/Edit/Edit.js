@@ -18,8 +18,9 @@ class Edit extends React.Component {
     })
   }
 
+
   render(){
-  const {updateDate, updateMood} = this.props;
+  const {updateDate, updateMood, newMood, updateApp} = this.props;
   return (
   <div className="edit__page">
     <h1 className="edit__title">¿Cómo te ha ido el día?</h1>
@@ -48,7 +49,9 @@ class Edit extends React.Component {
               type="radio" 
               name="state" 
               defaultValue="happy" 
-              onClick={this.handleChangeMood}/> 
+              // onClick={this.handleChangeMood}
+              onClick={updateMood}
+              /> 
               :)
             </label>
           </div>
@@ -61,7 +64,9 @@ class Edit extends React.Component {
               type="radio" 
               name="state" 
               defaultValue="sad" 
-              onClick={this.handleChangeMood}/> 
+              //onClick={this.handleChangeMood}
+              onClick={updateMood}
+              /> 
               :( 
             </label>
           </div>
@@ -72,14 +77,15 @@ class Edit extends React.Component {
         <textarea className="form__message--content"
         name="message" 
         placeholder="¿Por qué es un buen día?"
-        disabled = {`${this.state.mood}` === 'happy' ? false : true} />
+        disabled = {`${newMood}` === 'happy' ? false : true} />
       </div>
       <div className="edit__buttons">
         <Link
         className="edit__save"
         to="/">
           <input 
-          className="edit__save--btn" type="submit" value="guardar"/>
+          className="edit__save--btn" type="submit" value="guardar"
+          onClick={updateApp}/>
         </Link>
         <Link 
         className="edit__cancel"
