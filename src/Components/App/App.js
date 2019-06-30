@@ -6,6 +6,7 @@ import Edit from '../Edit/Edit.js';
 
 class App extends React.Component {
   constructor(props){
+    const newData = { date: '', mood: '' };
     super(props);
     this.state=({
       data: [ 
@@ -23,18 +24,23 @@ class App extends React.Component {
     })
     this.updateMood = this.updateMood.bind(this);
   }
-  
+
+
   updateMood(event){
     const actualMood = event.currentTarget.value;
     return(
-      console.log('mood', actualMood)
+      this.newData.mood: actualMood
     );
   }
+
   updateDate(event){
+    let dato;
     const actualDate = event.currentTarget.value;
     return(
-      console.log('date', actualDate)
+      this.dato : actualDate
     );
+    console.log('date', actualDate);
+    console.log('dato', dato);
   }
 
   render(){
