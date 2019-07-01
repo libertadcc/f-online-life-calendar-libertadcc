@@ -1,5 +1,6 @@
 ## Mood Calendar 🙂🙃
 How was your day?
+In this SPA you can write down if it was a good or a bad day. 
 
 ## 👶  First steps
 
