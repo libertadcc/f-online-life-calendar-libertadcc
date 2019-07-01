@@ -2,28 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Edit.scss';
 
-class Edit extends React.Component {
-  constructor(props){
-    super(props);
-    this.state=({
-      mood: ''
-    })
-    this.handleChangeMood = this.handleChangeMood.bind(this);
-  }
-
-  handleChangeMood(event){
-    const currentMood = event.currentTarget.value;
-    this.setState({
-      mood: currentMood
-    })
-  }
-
-
-  render(){
-  const {updateDate, updateMood, newMood, updateApp} = this.props;
+function Edit ({updateDate, updateMood, newMood, updateApp}){
   return (
   <div className="edit__page">
-    <h1 className="edit__title">¿Cómo te ha ido el día?</h1>
+    <h1 className="edit__title">
+      ¿Cómo te ha ido el día?
+    </h1>
     <form className="edit__form">
       <div className="form__date">
         <label 
@@ -49,7 +33,6 @@ class Edit extends React.Component {
               type="radio" 
               name="state" 
               defaultValue="happy" 
-              // onClick={this.handleChangeMood}
               onClick={updateMood}
               /> 
               :)
@@ -64,7 +47,6 @@ class Edit extends React.Component {
               type="radio" 
               name="state" 
               defaultValue="sad" 
-              //onClick={this.handleChangeMood}
               onClick={updateMood}
               /> 
               :( 
@@ -98,7 +80,7 @@ class Edit extends React.Component {
     </form>
    </div>
   );
-  }
 }
+
 
 export default Edit;

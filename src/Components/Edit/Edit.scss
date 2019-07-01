@@ -70,6 +70,7 @@
 .form__message--content {
   font-size: 15px;
   text-align: center;
+  padding-top: 10px;
   &:disabled{
     background: rgb(223, 219, 219);
     opacity: 0.5;
@@ -102,7 +103,7 @@
 }
 
 .edit__cancel--btn {
-  width: 200px;
+  min-width: 100px;
   font-size: 18px;
   text-transform: capitalize;
   color: grey;

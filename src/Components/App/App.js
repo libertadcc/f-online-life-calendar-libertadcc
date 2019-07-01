@@ -6,7 +6,6 @@ import Edit from '../Edit/Edit.js';
 
 class App extends React.Component {
   constructor(props){
-    
     super(props);
     this.state=({
       data: [ 
@@ -21,6 +20,21 @@ class App extends React.Component {
     this.updateMood = this.updateMood.bind(this);
     this.updateDate = this.updateDate.bind(this);
     this.updateApp = this.updateApp.bind(this);
+    this.saveData = this.saveData.bind(this);
+    this.getData = this.getData.bind(this);
+  }
+
+  componentDidMount(){
+    this.saveData();
+    this.getData();
+  }
+
+  saveData(){
+    localStorage.setItem('moods', JSON.stringify(this.state.data));
+  }
+
+  getData(){
+    JSON.parse(localStorage.getItem('moods'));
   }
 
   updateMood(event){
@@ -39,8 +53,6 @@ class App extends React.Component {
     });
   }
 
-
-  
   updateApp(){
     const actualData = {date: this.state.newDate, mood: this.state.newMood};
     this.setState(prevState => ({
@@ -55,7 +67,7 @@ class App extends React.Component {
       <Switch>
         <Route exact path="/" render={() => 
           <Home 
-          item={data.map(item =>item)}/> }/>
+          item = {data.map(item => item)}/> }/>
         <Route path="/edit" render={() =>
           <Edit 
           updateApp = {this.updateApp}
