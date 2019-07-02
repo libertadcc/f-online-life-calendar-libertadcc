@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.scss'
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function Home({item}) {
   return (
@@ -36,3 +37,7 @@ function Home({item}) {
 }
 
 export default Home;
+
+Home.propTypes = {
+  item: PropTypes.array
+}

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './Edit.scss';
 import PropTypes from 'prop-types';
 
-
 function Edit ({updateDate, updateMood, newMood, updateApp}){
   return (
   <div className="edit__page">
