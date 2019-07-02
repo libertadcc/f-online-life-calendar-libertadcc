@@ -19,15 +19,12 @@ class App extends React.Component {
     })
     this.updateMood = this.updateMood.bind(this);
     this.updateDate = this.updateDate.bind(this);
+
     this.updateApp = this.updateApp.bind(this);
     this.saveData = this.saveData.bind(this);
     this.getData = this.getData.bind(this);
   }
-
-  componentDidMount(){
-    this.saveData();
-    this.getData();
-  }
+  
 
   saveData(){
     localStorage.setItem('moods', JSON.stringify(this.state.data));
@@ -35,6 +32,7 @@ class App extends React.Component {
 
   getData(){
     JSON.parse(localStorage.getItem('moods'));
+    return console.log('Datos del localstorage')
   }
 
   updateMood(event){
@@ -73,7 +71,8 @@ class App extends React.Component {
           updateApp = {this.updateApp}
           newMood = {this.state.newMood}
           updateMood={this.updateMood}
-          updateDate={this.updateDate}/>} />
+          updateDate={this.updateDate}
+          />} />
       </Switch>
     </div>
   );
