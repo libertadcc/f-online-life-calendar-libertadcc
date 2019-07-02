@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Edit.scss';
+import PropTypes from 'prop-types';
+
 
 function Edit ({updateDate, updateMood, newMood, updateApp}){
   return (
@@ -82,5 +84,11 @@ function Edit ({updateDate, updateMood, newMood, updateApp}){
   );
 }
 
-
 export default Edit;
+
+Edit.propTypes = {
+  updateDate: PropTypes.func,
+  updateMood: PropTypes.func,
+  updateApp: PropTypes.func,
+  newMood: PropTypes.string
+};
